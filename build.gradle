@@ -1,0 +1,29 @@
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+group 'com.robothy'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+gradlePlugin {
+    plugins {
+        helloPlugin {
+            id = 'com.robothy.hello'
+            implementationClass = 'com.robothy.HelloPlugin'
+        }
+        googbyePlugin{
+            id = 'com.robothy.goodbye'
+            implementationClass = 'com.robothy.GoodbyePlugin'
+        }
+    }
+}
+
+wrapper{
+    gradleVersion = '6.7'
+}
